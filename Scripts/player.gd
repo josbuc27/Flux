@@ -30,21 +30,20 @@ func _physics_process(delta):
 
 	update_animation()
 	update_facing_direction()
-	print(velocity.x)
 	move_and_slide()
-
+	print(velocity.y !=0)
 
 func update_animation():
 	if velocity.x != 0:
 		animator.play("run")
-	elif Input.is_action_just_pressed("jump"):
+	elif velocity.y != 0:
 		animator.play("jump")
 	else:
 		animator.play("idle")
 
 
-func update_facing_direction():	
+func update_facing_direction():
 	if direction.x > 0:
-		$Sprite2D.flip_h = false 
+		$AnimationPlayer.flip_h = false 
 	elif direction.x < 0: 
-		$Sprite2D.flip_h = true 
+		$AnimationPlayer.flip_h = true 
