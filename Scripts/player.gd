@@ -7,7 +7,7 @@ extends CharacterBody2D
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var animation_locked : bool = false 
-var direction :  Vector2 = Vector2.ZERO
+var direction = 0
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -20,7 +20,7 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("left", "right")
+	direction = Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -41,9 +41,9 @@ func update_animation():
 	else:
 		animator.play("idle")
 
-
 func update_facing_direction():
-	if direction.x > 0:
-		$AnimationPlayer.flip_h = false 
-	elif direction.x < 0: 
-		$AnimationPlayer.flip_h = true 
+	if direction > 0:
+		$Sprite2D.flip_h = false 
+	elif direction < 0: 
+		$Sprite2D.flip_h = true 
+
