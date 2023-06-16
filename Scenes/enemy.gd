@@ -11,7 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 const SPEED = 30
 
 
-	
+
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y  = move_toward(velocity.y,gravity,5)
@@ -31,7 +31,7 @@ func animation_change():
 		$AnimationPlayer.play("death")
 	
 	else:
-		$AnimationPlayer.play("idle")
+		$AnimationPlayer.play("run")
 	
 
 
