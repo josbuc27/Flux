@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://rr5vc72a21p0"]
+
+[ext_resource type="Script" path="res://Moving Platform.gd" id="1_1kela"]
+[ext_resource type="Texture2D" uid="uid://ckfsksaa31rdo" path="res://Assets/CraterCaverns-tiles/CraterCaverns-tiles/tiles.png" id="2_k421l"]
+
+[sub_resource type="Curve2D" id="Curve2D_psrqp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 220, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+}
+point_count = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hreq8"]
+size = Vector2(46.0041, 45.9904)
+
+[node name="Moving Platform" type="Node2D"]
+script = ExtResource("1_1kela")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_psrqp")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(1, 0)
+rotation = 0.00456618
+rotates = false
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Path2D/PathFollow2D"]
+platform_on_leave = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/CharacterBody2D"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_k421l")
+hframes = 11
+vframes = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/CharacterBody2D"]
+position = Vector2(-0.0022831, -0.00913266)
+shape = SubResource("RectangleShape2D_hreq8")

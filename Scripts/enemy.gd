@@ -2,14 +2,13 @@ extends CharacterBody2D
 
 @export var health : int = 100 
 
-@export var starting_move_direction = -1
+var direction = 1
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-@onready var direction = starting_move_direction
 
-const SPEED = 30
 
+const SPEED = 60
 
 
 func _physics_process(delta):
@@ -26,6 +25,9 @@ func _physics_process(delta):
 	animation_change()
 	update_facing_direction()
 
+
+
+
 func animation_change():
 	if health == 0:
 		$AnimationPlayer.play("death")
@@ -40,3 +42,6 @@ func update_facing_direction():
 		$Sprite2D.flip_h = false 
 	elif direction < 0: 
 		$Sprite2D.flip_h = true 
+
+
+

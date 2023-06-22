@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhdq1cif833a2"]
+[gd_scene load_steps=9 format=3 uid="uid://cm1f5bgvoh8fg"]
 
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_4l8hx"]
 [ext_resource type="Texture2D" uid="uid://7xd2ql8apuln" path="res://Assets/Space Runner Assets - 27-11-20/Space Runner Assets - 27-11-20/Alien/Alien Spritesheet.png" id="1_614e6"]
-[ext_resource type="Script" path="res://Scenes/enemy.gd" id="1_p67if"]
 
 [sub_resource type="Animation" id="Animation_ouk0s"]
 length = 0.001
@@ -80,8 +80,8 @@ _data = {
 radius = 6.0
 height = 20.0
 
-[node name="Enemy" type="CharacterBody2D"]
-script = ExtResource("1_p67if")
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_4l8hx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

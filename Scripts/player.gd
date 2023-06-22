@@ -11,7 +11,7 @@ var direction = 0
 
 
 func _physics_process(delta):
-	# Add the gravity.
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
@@ -32,7 +32,7 @@ func _physics_process(delta):
 	update_animation()
 	update_facing_direction()
 	move_and_slide()
-	print(velocity.y !=0)
+
 
 func update_animation():
 	if velocity.x != 0:
