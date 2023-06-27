@@ -68,7 +68,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_0aygj"]
 resource_name = "shoot"
-length = 0.3
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -76,10 +76,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [40, 41, 42]
+"values": [40, 41, 42, 42]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u64pe"]

@@ -42,28 +42,31 @@ func _process(delta):
 	
 	
 
-func reduce_ammo():
-	if shoot():
-		ammo - 1 
-		print(ammo)
+
 		
 
 
 func shoot():
-	var bullet = bulletPath.instantiate()
+	if Input.is_action_just_pressed("shoot") :
+		animator.play("shoot")
 	
-	get_parent().add_child(bullet)
-	bullet.position = $Marker2D.global_position
-	
-	bullet.velocity = get_global_mouse_position() - bullet.position
+		await get_tree().create_timer(0.2).timeout
+		var bullet = bulletPath.instantiate()
+		
+		get_parent().add_child(bullet)
+		bullet.position = $Marker2D.global_position
+		bullet.rotation = get_angle_to(get_global_mouse_position())
+		
+		bullet.velocity = get_global_mouse_position() - bullet.position
+		ammo -= 1
 
 func update_animation():
+	if animator.current_animation == "shoot" and animator.is_playing():
+		return
 	if velocity.x != 0:
 		animator.play("run")
 	elif velocity.y != 0:
 		animator.play("jump")
-	elif Input.is_action_just_pressed("shoot"):
-		animator.play("shoot")  
 	else:
 		animator.play("idle")
 
