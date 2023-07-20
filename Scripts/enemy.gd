@@ -53,7 +53,6 @@ func update_facing_direction():
 
 
 func _on_area_2d_body_entered(body):
-
 	if body.is_in_group("bullet"):
 		print("hit",health_enemy)
 		hit(damage)

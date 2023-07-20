@@ -84,5 +84,5 @@ func update_facing_direction():
 func _on_area_2d_body_entered(body):
 	print("hit")
 	if body.is_in_group("fireball"):
-		player_health - 30
+		player_health -= 30
 		print(player_health)
