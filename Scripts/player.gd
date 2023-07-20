@@ -1,15 +1,15 @@
 extends CharacterBody2D
 
-
+@export var player_health: int 
 @export var SPEED: float = 300.0
 @export var JUMP_VELOCITY : float  = -400.0
 @onready var animator = $AnimationPlayer
 
-const bulletPath = preload("res://Scenes/bullet.tscn")
+const bulletPath = preload("res://Scenes/bullet_new.tscn")
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var animation_locked : bool = false 
 var direction = 0
-var ammo = 3 
+var ammo = 10
 
 func _physics_process(delta):
 	
@@ -43,21 +43,20 @@ func _process(delta):
 	
 
 
-		
 
 
 func shoot():
 	if Input.is_action_just_pressed("shoot") :
 		animator.play("shoot")
 	
-		await get_tree().create_timer(0.2).timeout
-		var bullet = bulletPath.instantiate()
+		await get_tree().create_timer(0.2).timeout 
+		var bullet_new = bulletPath.instantiate()
 		
-		get_parent().add_child(bullet)
-		bullet.position = $Marker2D.global_position
-		bullet.rotation = get_angle_to(get_global_mouse_position())
+		get_parent().add_child(bullet_new)
+		bullet_new.position = $Marker2D.global_position
+		bullet_new.rotation = get_angle_to(get_global_mouse_position())
 		
-		bullet.velocity = get_global_mouse_position() - bullet.position
+		bullet_new.velocity = get_global_mouse_position() - bullet_new.position
 		ammo -= 1
 
 func update_animation():
@@ -78,3 +77,12 @@ func update_facing_direction():
 	elif direction < 0: 
 		$Sprite2D.flip_h = true 
 
+
+
+
+
+func _on_area_2d_body_entered(body):
+	print("hit")
+	if body.is_in_group("fireball"):
+		player_health - 30
+		print(player_health)

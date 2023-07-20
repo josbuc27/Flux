@@ -1,6 +1,11 @@
 extends CharacterBody2D
 
-@export var health : int = 100 
+@export var health_enemy : float = 100 
+@export var damage : int = 30
+
+func hit(damage: int):
+	health_enemy -= damage
+
 
 var direction = 1
 
@@ -29,7 +34,7 @@ func _physics_process(delta):
 
 
 func animation_change():
-	if health == 0:
+	if health_enemy <= 0:
 		$AnimationPlayer.play("death")
 	
 	else:
@@ -45,3 +50,16 @@ func update_facing_direction():
 
 
 
+
+
+func _on_area_2d_body_entered(body):
+
+	if body.is_in_group("bullet"):
+		print("hit",health_enemy)
+		hit(damage)
+		death()
+
+func death():
+	if health_enemy <=0:
+		$AnimationPlayer.play("death")
+		queue_free()

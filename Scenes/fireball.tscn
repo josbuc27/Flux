@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfphxb1qkljj2"]
+
+[ext_resource type="Script" path="res://Scripts/fireball.gd" id="1_ce33g"]
+[ext_resource type="Texture2D" uid="uid://dcvsqb5qfytwt" path="res://Assets/Super Grotto Escape Files/Characters/Enemies/sprites/Fireball/fireball2.png" id="1_smutf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mqbm5"]
+
+[node name="Fireball" type="Area2D"]
+script = ExtResource("1_ce33g")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["fireball"]]
+shape = SubResource("CircleShape2D_mqbm5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_smutf")

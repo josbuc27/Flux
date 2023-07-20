@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://be7i0ybc5h17y"]
+
+[ext_resource type="Script" path="res://enemy_ranged.gd" id="1_ayj1f"]
+[ext_resource type="Texture2D" uid="uid://cfx5wcgfjl40f" path="res://Assets/Super Grotto Escape Files/Characters/Enemies/sprites/lizard shoots/css_sprites (4).png" id="2_2nr8n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lvy2f"]
+radius = 14.0
+
+[sub_resource type="Animation" id="Animation_174rv"]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_emx3p"]
+resource_name = "shoot"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_cxcpy"]
+resource_name = "walk"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r43hr"]
+_data = {
+"RESET": SubResource("Animation_174rv"),
+"shoot": SubResource("Animation_emx3p"),
+"walk": SubResource("Animation_cxcpy")
+}
+
+[node name="enemy_ranged" type="CharacterBody2D"]
+script = ExtResource("1_ayj1f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 4)
+shape = SubResource("CircleShape2D_lvy2f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2nr8n")
+hframes = 4
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r43hr")
+}
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-17, -1)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
