@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://be7i0ybc5h17y"]
 
-[ext_resource type="Script" path="res://enemy_ranged.gd" id="1_ayj1f"]
+[ext_resource type="Script" path="res://Scripts/enemy_ranged.gd" id="1_o2iig"]
 [ext_resource type="Texture2D" uid="uid://cfx5wcgfjl40f" path="res://Assets/Super Grotto Escape Files/Characters/Enemies/sprites/lizard shoots/css_sprites (4).png" id="2_2nr8n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lvy2f"]
@@ -62,7 +62,7 @@ _data = {
 }
 
 [node name="enemy_ranged" type="CharacterBody2D"]
-script = ExtResource("1_ayj1f")
+script = ExtResource("1_o2iig")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 4)

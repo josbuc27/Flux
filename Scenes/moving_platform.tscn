@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://rr5vc72a21p0"]
 
-[ext_resource type="Script" path="res://Moving Platform.gd" id="1_1kela"]
+[ext_resource type="Script" path="res://Scripts/Moving Platform.gd" id="1_tvlbd"]
 [ext_resource type="Texture2D" uid="uid://ckfsksaa31rdo" path="res://Assets/CraterCaverns-tiles/CraterCaverns-tiles/tiles.png" id="2_k421l"]
 
 [sub_resource type="Curve2D" id="Curve2D_psrqp"]
@@ -13,7 +13,7 @@ point_count = 4
 size = Vector2(46.0041, 45.9904)
 
 [node name="Moving Platform" type="Node2D"]
-script = ExtResource("1_1kela")
+script = ExtResource("1_tvlbd")
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_psrqp")

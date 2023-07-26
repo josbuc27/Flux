@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7wfj2y6y1ie1"]
+[gd_scene load_steps=13 format=3 uid="uid://c7wfj2y6y1ie1"]
 
 [ext_resource type="Texture2D" uid="uid://c0jn2a47b5msk" path="res://Assets/Space Runner Assets - 27-11-20/Space Runner Assets - 27-11-20/Tiles/RunnerTileSet.png" id="1_oxkyv"]
 [ext_resource type="Texture2D" uid="uid://ckfsksaa31rdo" path="res://Assets/CraterCaverns-tiles/CraterCaverns-tiles/tiles.png" id="1_tmo8n"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cm1f5bgvoh8fg" path="res://Scenes/enemy_melee.tscn" id="6_573vx"]
 [ext_resource type="PackedScene" uid="uid://dnk77k6huc1s8" path="res://Scenes/flip.tscn" id="6_c4t2e"]
 [ext_resource type="PackedScene" uid="uid://be7i0ybc5h17y" path="res://Scenes/enemy_ranged.tscn" id="7_h7hq1"]
+[ext_resource type="PackedScene" uid="uid://d20bpp2gj5dlt" path="res://Scenes/door_and_button.tscn" id="8_dsnas"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q8kje"]
 
@@ -1327,3 +1328,18 @@ position = Vector2(547, 88)
 
 [node name="enemy_ranged" parent="." instance=ExtResource("7_h7hq1")]
 position = Vector2(468, 23)
+
+[node name="Door and Button" parent="." instance=ExtResource("8_dsnas")]
+position = Vector2(368, 99)
+
+[node name="Button" parent="Door and Button" index="1"]
+position = Vector2(-187, -1)
+
+[node name="CollisionShape2D" parent="Door and Button/Button/Button" index="0"]
+position = Vector2(0, 1.2)
+scale = Vector2(1, 1)
+
+[node name="Door" parent="Door and Button" index="2"]
+position = Vector2(40, -19)
+
+[editable path="Door and Button"]
