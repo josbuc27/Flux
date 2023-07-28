@@ -76,13 +76,13 @@ func update_facing_direction():
 		$Sprite2D.flip_h = false 
 	elif direction < 0: 
 		$Sprite2D.flip_h = true 
-
+ 
 
 
 
 
 func _on_area_2d_body_entered(body):
-	if body.is_in_group("fireball") :
+	if body.is_in_group("fireball"):
 		player_health -= 30
 		print(player_health)
 

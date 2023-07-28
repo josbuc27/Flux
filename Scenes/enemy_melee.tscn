@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cm1f5bgvoh8fg"]
+[gd_scene load_steps=11 format=3 uid="uid://cm1f5bgvoh8fg"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_xcc5m"]
 [ext_resource type="Texture2D" uid="uid://7xd2ql8apuln" path="res://Assets/Space Runner Assets - 27-11-20/Space Runner Assets - 27-11-20/Alien/Alien Spritesheet.png" id="2_bf7gg"]
+[ext_resource type="Script" path="res://Scripts/Damageable.gd" id="3_fh2pw"]
 
 [sub_resource type="Animation" id="Animation_ouk0s"]
 length = 0.001
@@ -81,9 +82,12 @@ radius = 6.0
 height = 20.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f76xt"]
+radius = 33.0
+height = 66.0
 
 [node name="Enemy_melee" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_xcc5m")
+metadata/_edit_horizontal_guides_ = []
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -105,7 +109,10 @@ frame = 18
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -1)
+position = Vector2(1, -1)
 shape = SubResource("CapsuleShape2D_f76xt")
+
+[node name="Damageable" type="Node" parent="."]
+script = ExtResource("3_fh2pw")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

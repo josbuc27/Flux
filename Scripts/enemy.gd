@@ -58,6 +58,7 @@ func _on_area_2d_body_entered(body):
 		hit(damage)
 		death()
 
+
 func death():
 	if health_enemy <=0:
 		$AnimationPlayer.play("death")
