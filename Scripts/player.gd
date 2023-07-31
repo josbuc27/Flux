@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var player_health: int 
-@export var SPEED: float = 300.0
-@export var JUMP_VELOCITY : float  = -400.0
+@export var player_health: int = 100
+@export var SPEED: float = 250
+@export var JUMP_VELOCITY : float  = -400
 @onready var animator = $AnimationPlayer
 
 const bulletPath = preload("res://Scenes/bullet_new.tscn")
@@ -80,9 +80,9 @@ func update_facing_direction():
 
 
 
-
-func _on_area_2d_body_entered(body):
-	if body.is_in_group("fireball"):
-		player_health -= 30
-		print(player_health)
+func take_damage(amount):
+	print("take damage")
+	player_health-= amount
+	if player_health<= 0:
+		get_tree().quit()
 

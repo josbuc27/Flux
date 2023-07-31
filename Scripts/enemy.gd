@@ -52,14 +52,15 @@ func update_facing_direction():
 
 
 
-func _on_area_2d_body_entered(body):
-	if body.is_in_group("bullet"):
-		print("hit",health_enemy)
-		hit(damage)
-		death()
 
-
-func death():
-	if health_enemy <=0:
+func take_damage(amount):
+	print("take damage")
+	health_enemy-= amount
+	if health_enemy <= 0:
 		$AnimationPlayer.play("death")
+		
 		queue_free()
+
+
+
+

@@ -237,7 +237,6 @@ position = Vector2(0, 0.8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Button"]
 position = Vector2(0, 0.800001)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_66ex4")
 
 [node name="Area2D" type="Area2D" parent="Button"]

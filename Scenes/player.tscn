@@ -116,6 +116,7 @@ shape = SubResource("CapsuleShape2D_7hydi")
 texture = ExtResource("2_hxsw5")
 hframes = 8
 vframes = 6
+frame = 19
 
 [node name="Marker2D" type="Marker2D" parent="."]
 

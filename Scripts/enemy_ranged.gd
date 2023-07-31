@@ -30,7 +30,13 @@ func shoot():
 	$AnimationPlayer.play("walk")
 	
 
-
+func take_damage(amount):
+	print("take damage")
+	health-= amount
+	if health <= 0:
+		queue_free()
+	print("I'm dead")
+	pass
 
 
 
