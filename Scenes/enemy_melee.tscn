@@ -82,10 +82,12 @@ radius = 6.0
 height = 20.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f76xt"]
-radius = 8.0
+radius = 11.0
 
 [node name="Enemy_melee" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_xcc5m")
+health_enemy = null
+damage = null
 metadata/_edit_horizontal_guides_ = []
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

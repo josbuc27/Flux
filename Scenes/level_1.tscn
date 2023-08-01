@@ -1226,6 +1226,8 @@ position = Vector2(406, 81)
 
 [node name="Enemy_melee" parent="." instance=ExtResource("4_kvxbd")]
 position = Vector2(304, 74)
+health_enemy = null
+damage = null
 
 [node name="enemy_ranged" parent="." instance=ExtResource("5_mnmo4")]
 position = Vector2(595, 71)

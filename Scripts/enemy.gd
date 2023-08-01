@@ -50,9 +50,6 @@ func update_facing_direction():
 
 
 
-
-
-
 func take_damage(amount):
 	print("take damage")
 	health_enemy-= amount
@@ -62,5 +59,7 @@ func take_damage(amount):
 		queue_free()
 
 
-
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("player") and body.has_method("take_damage") and body.has_method("knockback"):
+		body.take_damage(50)
 

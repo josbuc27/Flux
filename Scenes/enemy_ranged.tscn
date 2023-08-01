@@ -79,6 +79,7 @@ libraries = {
 }
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [node name="Marker2D" type="Marker2D" parent="."]

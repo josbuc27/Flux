@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://btm8civbbxvl3"]
+
+[ext_resource type="Script" path="res://Scripts/edge_of_map.gd" id="1_lihkf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t5yv8"]
+size = Vector2(1393, 36)
+
+[node name="Edge of map" type="Area2D"]
+script = ExtResource("1_lihkf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(287.5, 8)
+shape = SubResource("RectangleShape2D_t5yv8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

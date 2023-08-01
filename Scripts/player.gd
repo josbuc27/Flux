@@ -3,7 +3,10 @@ extends CharacterBody2D
 @export var player_health: int = 100
 @export var SPEED: float = 250
 @export var JUMP_VELOCITY : float  = -400
+@export var player_knockback : Vector2 = Vector2(100,0)
 @onready var animator = $AnimationPlayer
+@onready var starting_position = global_position
+
 
 const bulletPath = preload("res://Scenes/bullet_new.tscn")
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -39,6 +42,7 @@ func _physics_process(delta):
 func _process(delta):
 	if Input.is_action_just_pressed("shoot") and ammo >0:
 		shoot()
+		
 	
 	
 
@@ -86,3 +90,8 @@ func take_damage(amount):
 	if player_health<= 0:
 		get_tree().quit()
 
+func respawn():
+	global_position = starting_position
+
+func knockback():
+	 = player_knockback
