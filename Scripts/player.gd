@@ -93,5 +93,5 @@ func take_damage(amount):
 func respawn():
 	global_position = starting_position
 
-func knockback():
-	 = player_knockback
+#func knockback():
+
