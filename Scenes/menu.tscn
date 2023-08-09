@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh1gwc7pixyha"]
+[gd_scene load_steps=3 format=3 uid="uid://bh1gwc7pixyha"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_l2wul"]
+[ext_resource type="Texture2D" uid="uid://do15bmclaryms" path="res://Assets/Flux Background.PNG" id="2_a13lw"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -10,6 +11,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l2wul")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1158.0
+offset_bottom = 652.0
+texture = ExtResource("2_a13lw")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 modulate = Color(1, 0.0117647, 0.0941176, 1)
@@ -37,10 +44,6 @@ text = "Options"
 layout_mode = 2
 text = "Quit
 "
-
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
-layout_mode = 2
-color = Color(0.976471, 0, 0, 1)
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

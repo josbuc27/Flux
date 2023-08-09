@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c7wfj2y6y1ie1"]
+[gd_scene load_steps=17 format=3 uid="uid://dhivdc4notl5t"]
 
 [ext_resource type="Texture2D" uid="uid://c0jn2a47b5msk" path="res://Assets/Space Runner Assets - 27-11-20/Space Runner Assets - 27-11-20/Tiles/RunnerTileSet.png" id="1_oxkyv"]
 [ext_resource type="Texture2D" uid="uid://ckfsksaa31rdo" path="res://Assets/CraterCaverns-tiles/CraterCaverns-tiles/tiles.png" id="1_tmo8n"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://be7i0ybc5h17y" path="res://Scenes/enemy_ranged.tscn" id="7_h7hq1"]
 [ext_resource type="PackedScene" uid="uid://d20bpp2gj5dlt" path="res://Scenes/door_and_button.tscn" id="8_pkkiq"]
 [ext_resource type="PackedScene" uid="uid://btm8civbbxvl3" path="res://Scenes/edge_of_map.tscn" id="9_jo0wp"]
+[ext_resource type="PackedScene" uid="uid://cr5ki0mnlgxoa" path="res://Scenes/spikes.tscn" id="10_mn3bi"]
+[ext_resource type="PackedScene" uid="uid://3pm66kisxoqy" path="res://Scenes/ammo_pickup.tscn" id="11_anuaf"]
+[ext_resource type="PackedScene" uid="uid://ck8g2x3u50bw8" path="res://Scenes/health_pickup.tscn" id="12_bw83q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q8kje"]
 
@@ -1307,10 +1310,6 @@ layer_0/tile_data = PackedInt32Array(393218, 2, 4, 458754, 2, 5, 393219, 65538, 
 
 [node name="Player" parent="." instance=ExtResource("3_sdc2w")]
 position = Vector2(46, 72)
-player_health = 100
-SPEED = 250.0
-JUMP_VELOCITY = -400.0
-player_knockback = Vector2(100, 0)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -1345,6 +1344,16 @@ position = Vector2(-1, 170)
 
 [node name="CollisionShape2D" parent="Edge of map" index="0"]
 position = Vector2(540.5, 8)
+
+[node name="Spikes" parent="." instance=ExtResource("10_mn3bi")]
+position = Vector2(97, 95)
+rotation = -3.14105
+
+[node name="AmmoPickup" parent="." instance=ExtResource("11_anuaf")]
+position = Vector2(710, 40)
+
+[node name="Health_pickup" parent="." instance=ExtResource("12_bw83q")]
+position = Vector2(637, 59)
 
 [editable path="Door and Button"]
 [editable path="Edge of map"]

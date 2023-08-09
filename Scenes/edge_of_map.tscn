@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/edge_of_map.gd" id="1_lihkf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5yv8"]
-size = Vector2(1393, 36)
+size = Vector2(2817, 36)
 
 [node name="Edge of map" type="Area2D"]
 script = ExtResource("1_lihkf")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://3pm66kisxoqy"]
+
+[ext_resource type="Script" path="res://Scripts/ammo_pickup.gd" id="1_blwjh"]
+[ext_resource type="Texture2D" uid="uid://ykwh8t5grseb" path="res://Assets/Super Grotto Escape Files/Fx/Sprites/Player-Shoot/player-shoot4.png" id="1_pipiu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sntup"]
+radius = 8.0
+height = 16.0
+
+[node name="AmmoPickup" type="Area2D"]
+script = ExtResource("1_blwjh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pipiu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_sntup")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

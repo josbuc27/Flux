@@ -12,6 +12,7 @@ const bulletPath = preload("res://Scenes/bullet_new.tscn")
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var animation_locked : bool = false 
 var direction = 0
+var facing = 1
 var ammo = 10
 
 func _physics_process(delta):
@@ -27,9 +28,10 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	direction = Input.get_axis("left", "right")
 	if direction:
-		velocity.x = direction * SPEED
+		facing = direction
+		velocity.x = move_toward(velocity.x, direction * SPEED, SPEED/10)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, SPEED/10)
 		
 
 
@@ -90,8 +92,24 @@ func take_damage(amount):
 	if player_health<= 0:
 		get_tree().quit()
 
+func take_damage_knockback(amount):
+	print("take damage")
+	player_health-= amount
+	knockback()
+	if player_health <= 0:
+		get_tree().quit()
+
+
 func respawn():
 	global_position = starting_position
 
-#func knockback():
+func ammo_increase(amount):
+	ammo += amount
 
+func health_increase(amount):
+	player_health += amount
+
+func knockback():
+	velocity = Vector2(-facing * 600,-300)
+
+	
