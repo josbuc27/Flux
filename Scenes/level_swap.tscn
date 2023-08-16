@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnpfanip1rgve"]
+
+[ext_resource type="Script" path="res://Scripts/level_swap.gd" id="1_dpe73"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8fw0"]
+size = Vector2(68, 346)
+
+[node name="LevelSwap" type="Area2D"]
+script = ExtResource("1_dpe73")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24, 163)
+shape = SubResource("RectangleShape2D_o8fw0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

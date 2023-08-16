@@ -108,8 +108,12 @@ func ammo_increase(amount):
 
 func health_increase(amount):
 	player_health += amount
+	max_health()
+	print(player_health)
 
 func knockback():
 	velocity = Vector2(-facing * 600,-300)
 
-	
+func max_health():
+	if player_health >=100:
+		player_health = 100

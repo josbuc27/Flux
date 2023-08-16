@@ -61,6 +61,6 @@ func take_damage(amount):
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player") and body.has_method("take_damage_knockback") and body.has_method("knockback"):
-		body.take_damage_knockback(30)
+		body.take_damage_knockback(35)
 
 

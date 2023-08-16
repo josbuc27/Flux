@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ck8g2x3u50bw8"]
 
 [ext_resource type="Script" path="res://Scripts/health_pickup.gd" id="1_78gqg"]
-[ext_resource type="Texture2D" uid="uid://cjmodaegq8rj2" path="res://Assets/Heart.png" id="1_edxh6"]
+[ext_resource type="Texture2D" uid="uid://btirao1ax246c" path="res://Assets/Hearts.png" id="2_pigk5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msm7w"]
 size = Vector2(21, 19)
@@ -10,7 +10,7 @@ size = Vector2(21, 19)
 script = ExtResource("1_78gqg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_edxh6")
+texture = ExtResource("2_pigk5")
 hframes = 5
 frame = 2
 

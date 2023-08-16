@@ -1,8 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://dhivdc4notl5t"]
+[gd_scene load_steps=19 format=3 uid="uid://dhivdc4notl5t"]
 
+[ext_resource type="PackedScene" uid="uid://cppd8t8ak22rl" path="res://Scenes/health_bar.tscn" id="1_hqq7v"]
 [ext_resource type="Texture2D" uid="uid://c0jn2a47b5msk" path="res://Assets/Space Runner Assets - 27-11-20/Space Runner Assets - 27-11-20/Tiles/RunnerTileSet.png" id="1_oxkyv"]
 [ext_resource type="Texture2D" uid="uid://ckfsksaa31rdo" path="res://Assets/CraterCaverns-tiles/CraterCaverns-tiles/tiles.png" id="1_tmo8n"]
 [ext_resource type="PackedScene" uid="uid://hiby5hy6fre2" path="res://Scenes/player.tscn" id="3_sdc2w"]
+[ext_resource type="PackedScene" uid="uid://b1fi55h3en648" path="res://Scenes/ammo_counter.tscn" id="4_yh0t0"]
 [ext_resource type="PackedScene" uid="uid://rr5vc72a21p0" path="res://Scenes/moving_platform.tscn" id="5_ylmdg"]
 [ext_resource type="PackedScene" uid="uid://cm1f5bgvoh8fg" path="res://Scenes/enemy_melee.tscn" id="6_573vx"]
 [ext_resource type="PackedScene" uid="uid://dnk77k6huc1s8" path="res://Scenes/flip.tscn" id="6_c4t2e"]
@@ -1300,7 +1302,7 @@ sources/2 = SubResource("TileSetAtlasSource_oarvl")
 sources/0 = SubResource("TileSetAtlasSource_q8kje")
 sources/1 = SubResource("TileSetAtlasSource_qaqh3")
 
-[node name="TestMap" type="Node2D"]
+[node name="World" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_kqkxx")
@@ -1310,6 +1312,14 @@ layer_0/tile_data = PackedInt32Array(393218, 2, 4, 458754, 2, 5, 393219, 65538, 
 
 [node name="Player" parent="." instance=ExtResource("3_sdc2w")]
 position = Vector2(46, 72)
+
+[node name="Ammo_counter" parent="Player" instance=ExtResource("4_yh0t0")]
+
+[node name="HealthBar" parent="Player" instance=ExtResource("1_hqq7v")]
+offset_left = -299.0
+offset_top = -195.0
+offset_right = -259.0
+offset_bottom = -155.0
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
