@@ -9,4 +9,4 @@ func _process(delta):
 
 
 func change_ammo():
-	$Panel/Ammo_count.text = player.ammo 
+	$VBoxContainer/Panel/Ammo_count.text = str(player.ammo)

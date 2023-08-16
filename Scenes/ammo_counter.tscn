@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/ammo_counter.gd" id="1_j62s1"]
 
 [node name="Ammo_counter" type="CanvasLayer"]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
 script = ExtResource("1_j62s1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -13,18 +15,24 @@ offset_bottom = 40.0
 layout_mode = 2
 
 [node name="Ammo_count" type="Label" parent="VBoxContainer/Panel"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -22.5
-offset_right = 21.5
-offset_bottom = 23.0
+offset_left = 44.5
+offset_top = 32.0
+offset_right = 88.5
+offset_bottom = 58.0
 grow_horizontal = 2
 text = "0"
 
 [node name="Ammo_lable" type="Label" parent="VBoxContainer/Panel"]
+modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_right = 182.0
-offset_bottom = 39.0
+offset_left = 3.5
+offset_top = 30.5
+offset_right = 65.5
+offset_bottom = 69.5
 text = "AMMO: "
