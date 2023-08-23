@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl17u7ot6wlpc"]
+
+[ext_resource type="Script" path="res://Scripts/levle_swap_2.gd" id="1_mtaq7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n67b1"]
+size = Vector2(102, 436)
+
+[node name="levle_swap2" type="Area2D"]
+script = ExtResource("1_mtaq7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(41, 208)
+shape = SubResource("RectangleShape2D_n67b1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

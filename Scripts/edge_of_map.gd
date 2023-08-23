@@ -5,6 +5,6 @@ extends Area2D
 
 func _on_body_entered(body):
 	if body.has_method("respawn") and body.has_method("take_damage"):
-		body.take_damage(50)
+		body.take_damage(35)
 		body.respawn()
 		

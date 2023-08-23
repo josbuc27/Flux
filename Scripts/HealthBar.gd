@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 @onready var player = get_node("/root/World/Player")
 
@@ -10,8 +10,8 @@ func _process(delta):
 
 func change_health() :
 	if player.player_health <=35:
-		$TextureProgressBar.value= 35
+		$VBoxContainer/TextureProgressBar.value= 35
 	elif player.player_health >35 and player.player_health <=66:
-		$TextureProgressBar.value =66
+		$VBoxContainer/TextureProgressBar.value =66
 	elif player.player_health >66:
-		$TextureProgressBar.value = 100
+		$VBoxContainer/TextureProgressBar.value = 100

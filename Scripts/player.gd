@@ -87,17 +87,15 @@ func update_facing_direction():
 
 
 func take_damage(amount):
-	print("take damage")
 	player_health-= amount
 	if player_health<= 0:
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://Scenes/retry.tscn")
 
 func take_damage_knockback(amount):
-	print("take damage")
 	player_health-= amount
 	knockback()
 	if player_health <= 0:
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://Scenes/retry.tscn")
 
 
 func respawn():
@@ -109,7 +107,7 @@ func ammo_increase(amount):
 func health_increase(amount):
 	player_health += amount
 	max_health()
-	print(player_health)
+
 
 func knockback():
 	velocity = Vector2(-facing * 600,-300)

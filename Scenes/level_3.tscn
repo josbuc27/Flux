@@ -1,24 +1,18 @@
-[gd_scene load_steps=19 format=3 uid="uid://c7if6k1ercr8x"]
+[gd_scene load_steps=13 format=3 uid="uid://dwymxrt1aajaw"]
 
-[ext_resource type="Script" path="res://Scripts/set_scene.gd" id="1_bp0oi"]
-[ext_resource type="Texture2D" uid="uid://ckfsksaa31rdo" path="res://Assets/CraterCaverns-tiles/CraterCaverns-tiles/tiles.png" id="2_q4dwa"]
-[ext_resource type="PackedScene" uid="uid://bhleuo6igwkrj" path="res://Scenes/parallax_background.tscn" id="2_rxayg"]
-[ext_resource type="PackedScene" uid="uid://hiby5hy6fre2" path="res://Scenes/player.tscn" id="3_aljao"]
-[ext_resource type="PackedScene" uid="uid://cppd8t8ak22rl" path="res://Scenes/health_bar.tscn" id="4_ntns8"]
-[ext_resource type="PackedScene" uid="uid://b1fi55h3en648" path="res://Scenes/ammo_counter.tscn" id="5_n87u1"]
-[ext_resource type="PackedScene" uid="uid://be7i0ybc5h17y" path="res://Scenes/enemy_ranged.tscn" id="6_7hopw"]
-[ext_resource type="PackedScene" uid="uid://cm1f5bgvoh8fg" path="res://Scenes/enemy_melee.tscn" id="7_hrcdm"]
-[ext_resource type="PackedScene" uid="uid://dnk77k6huc1s8" path="res://Scenes/flip.tscn" id="8_kelf3"]
-[ext_resource type="PackedScene" uid="uid://ck8g2x3u50bw8" path="res://Scenes/health_pickup.tscn" id="9_e68xo"]
-[ext_resource type="PackedScene" uid="uid://btm8civbbxvl3" path="res://Scenes/edge_of_map.tscn" id="10_yfypf"]
-[ext_resource type="PackedScene" uid="uid://cr5ki0mnlgxoa" path="res://Scenes/spikes.tscn" id="11_8qrjm"]
-[ext_resource type="PackedScene" uid="uid://rr5vc72a21p0" path="res://Scenes/moving_platform.tscn" id="12_ry8v1"]
-[ext_resource type="PackedScene" uid="uid://d20bpp2gj5dlt" path="res://Scenes/door_and_button.tscn" id="13_xse5d"]
-[ext_resource type="PackedScene" uid="uid://cl17u7ot6wlpc" path="res://Scenes/levle_swap_2.tscn" id="14_6royv"]
-[ext_resource type="PackedScene" uid="uid://3pm66kisxoqy" path="res://Scenes/ammo_pickup.tscn" id="16_4vkb7"]
+[ext_resource type="PackedScene" uid="uid://bhleuo6igwkrj" path="res://Scenes/parallax_background.tscn" id="1_2d4yc"]
+[ext_resource type="PackedScene" uid="uid://be7i0ybc5h17y" path="res://Scenes/enemy_ranged.tscn" id="1_g0xjs"]
+[ext_resource type="PackedScene" uid="uid://hiby5hy6fre2" path="res://Scenes/player.tscn" id="2_ci2pc"]
+[ext_resource type="PackedScene" uid="uid://dnk77k6huc1s8" path="res://Scenes/flip.tscn" id="2_eggvm"]
+[ext_resource type="Texture2D" uid="uid://ckfsksaa31rdo" path="res://Assets/CraterCaverns-tiles/CraterCaverns-tiles/tiles.png" id="3_m8txh"]
+[ext_resource type="PackedScene" uid="uid://b1fi55h3en648" path="res://Scenes/ammo_counter.tscn" id="4_sxgl6"]
+[ext_resource type="PackedScene" uid="uid://cppd8t8ak22rl" path="res://Scenes/health_bar.tscn" id="5_fxiqv"]
+[ext_resource type="PackedScene" uid="uid://d20bpp2gj5dlt" path="res://Scenes/door_and_button.tscn" id="6_08krw"]
+[ext_resource type="PackedScene" uid="uid://cr5ki0mnlgxoa" path="res://Scenes/spikes.tscn" id="7_anht1"]
+[ext_resource type="PackedScene" uid="uid://cm1f5bgvoh8fg" path="res://Scenes/enemy_melee.tscn" id="10_3855j"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vify"]
-texture = ExtResource("2_q4dwa")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2m5ak"]
+texture = ExtResource("3_m8txh")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -190,11 +184,11 @@ texture = ExtResource("2_q4dwa")
 0:4/0 = 0
 0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:4/0/physics_layer_0/angular_velocity = 0.0
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, -8, 8, 8, 8, 8, 1, 8, 0)
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 0, 8, 8, -8, 8, -8, 0)
 1:4/0 = 0
 1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:4/0/physics_layer_0/angular_velocity = 0.0
-1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, 0, 8, 0, 8, 8)
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.125, 8, -0.125, 8, 8, -8, 8)
 2:4/0 = 0
 2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:4/0/physics_layer_0/angular_velocity = 0.0
@@ -517,30 +511,31 @@ texture = ExtResource("2_q4dwa")
 3:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:15/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSet" id="TileSet_84n3x"]
+[sub_resource type="TileSet" id="TileSet_uu215"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_5vify")
+sources/3 = SubResource("TileSetAtlasSource_2m5ak")
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_bp0oi")
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("2_rxayg")]
+[node name="enemy_ranged" parent="." instance=ExtResource("1_g0xjs")]
+position = Vector2(713, 100)
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_84n3x")
-format = 2
-layer_0/name = "Ground"
-layer_0/tile_data = PackedInt32Array(720896, 0, 4, 786432, 0, 5, 720897, 65536, 4, 786433, 65536, 5, 720898, 0, 4, 786434, 0, 5, 720899, 65536, 4, 786435, 65536, 5, 720900, 0, 4, 786436, 0, 5, 720901, 65536, 4, 786437, 65536, 5, 720902, 0, 4, 786438, 0, 5, 720903, 65536, 4, 786439, 65536, 5, 720904, 0, 4, 786440, 0, 5, 720905, 65536, 4, 786441, 65536, 5, 720906, 0, 4, 786442, 0, 5, 720907, 65536, 4, 786443, 65536, 5, 720914, 0, 4, 786450, 0, 5, 720915, 65536, 4, 786451, 65536, 5, 720916, 0, 4, 786452, 0, 5, 720917, 65536, 4, 786453, 65536, 5, 720918, 0, 4, 786454, 0, 5, 720919, 65536, 4, 786455, 65536, 5, 720920, 0, 4, 786456, 0, 5, 720921, 65536, 4, 786457, 65536, 5, 720925, 0, 4, 786461, 0, 5, 720926, 65536, 4, 786462, 65536, 5, 720927, 0, 4, 786463, 0, 5, 720928, 65536, 4, 786464, 65536, 5, 720933, 0, 4, 786469, 0, 5, 720934, 65536, 4, 786470, 65536, 5, 720935, 0, 4, 786471, 0, 5, 720936, 65536, 4, 786472, 65536, 5, 720944, 0, 4, 786480, 0, 5, 720945, 65536, 4, 786481, 65536, 5, 720946, 0, 4, 786482, 0, 5, 720947, 65536, 4, 786483, 65536, 5, 720948, 0, 4, 786484, 0, 5, 720949, 65536, 4, 786485, 65536, 5, 720950, 0, 4, 786486, 0, 5, 720951, 65536, 4, 786487, 65536, 5, 655438, 0, 4, 720974, 0, 5, 655439, 65536, 4, 720975, 65536, 5, 655440, 0, 4, 720976, 0, 5, 655441, 65536, 4, 720977, 65536, 5, 655442, 0, 4, 720978, 0, 5, 655443, 65536, 4, 720979, 65536, 5, 655444, 0, 4, 720980, 0, 5, 655445, 65536, 4, 720981, 65536, 5, 655446, 0, 4, 720982, 0, 5, 655447, 65536, 4, 720983, 65536, 5, 524380, 0, 4, 589916, 0, 5, 524381, 65536, 4, 589917, 65536, 5, 524382, 0, 4, 589918, 0, 5, 524383, 65536, 4, 589919, 65536, 5, 524384, 0, 4, 589920, 0, 5, 524385, 65536, 4, 589921, 65536, 5, 524386, 0, 4, 589922, 0, 5, 524387, 65536, 4, 589923, 65536, 5, 524388, 0, 4, 589924, 0, 5, 524389, 65536, 4, 589925, 65536, 5, 524390, 0, 4, 589926, 0, 5, 524391, 65536, 4, 589927, 65536, 5, 524392, 0, 4, 589928, 0, 5, 524393, 65536, 4, 589929, 65536, 5, 196707, 0, 4, 262243, 0, 5, 196708, 65536, 4, 262244, 65536, 5, 196705, 0, 4, 262241, 0, 5, 196706, 65536, 4, 262242, 65536, 5, 196709, 0, 4, 262245, 0, 5, 196710, 65536, 4, 262246, 65536, 5, 196711, 0, 4, 262247, 0, 5, 196712, 65536, 4, 262248, 65536, 5, 196713, 0, 4, 262249, 0, 5, 524394, 0, 4, 589930, 0, 5, 524395, 65536, 4, 589931, 65536, 5, 524396, 0, 4, 589932, 0, 5, 524397, 65536, 4, 589933, 65536, 5, 524399, 65536, 4, 589935, 65536, 5, 524398, 0, 4, 589934, 0, 5, 524400, 0, 4, 589936, 0, 5, 524401, 65536, 4, 589937, 65536, 5, 196716, 65536, 4, 262252, 65536, 5, 196717, 0, 4, 262253, 0, 5, 196718, 65536, 4, 262254, 65536, 5, 196719, 0, 4, 262255, 0, 5, 196720, 65536, 4, 262256, 65536, 5, 196714, 65536, 4, 262250, 65536, 5, 196715, 0, 4, 262251, 0, 5)
+[node name="Flip" parent="." instance=ExtResource("2_eggvm")]
+position = Vector2(280, 174)
 
-[node name="Player" parent="." instance=ExtResource("3_aljao")]
+[node name="Flip2" parent="." instance=ExtResource("2_eggvm")]
+position = Vector2(424, 175)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_2d4yc")]
+
+[node name="Player" parent="." instance=ExtResource("2_ci2pc")]
 position = Vector2(16, 164)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
-remote_path = NodePath("../../Camera2D")
-
-[node name="HealthBar" parent="Player" instance=ExtResource("4_ntns8")]
-
-[node name="Ammo_counter" parent="Player" instance=ExtResource("5_n87u1")]
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_uu215")
+format = 2
+layer_0/name = "Ground"
+layer_0/tile_data = PackedInt32Array(720896, 3, 4, 786432, 3, 5, 720897, 65539, 4, 786433, 65539, 5, 720898, 3, 4, 786434, 3, 5, 720899, 65539, 4, 786435, 65539, 5, 720900, 3, 4, 786436, 3, 5, 720901, 65539, 4, 786437, 65539, 5, 720902, 3, 4, 786438, 3, 5, 720903, 65539, 4, 786439, 65539, 5, 720904, 3, 4, 786440, 3, 5, 720905, 65539, 4, 786441, 65539, 5, 720906, 3, 4, 786442, 3, 5, 720907, 65539, 4, 786443, 65539, 5, 720914, 3, 4, 786450, 3, 5, 720915, 65539, 4, 786451, 65539, 5, 720916, 3, 4, 786452, 3, 5, 720917, 65539, 4, 786453, 65539, 5, 720918, 3, 4, 786454, 3, 5, 720919, 65539, 4, 786455, 65539, 5, 720920, 3, 4, 786456, 3, 5, 720921, 65539, 4, 786457, 65539, 5, 655438, 3, 4, 720974, 3, 5, 655439, 65539, 4, 720975, 65539, 5, 655440, 3, 4, 720976, 3, 5, 655441, 65539, 4, 720977, 65539, 5, 655442, 3, 4, 720978, 3, 5, 655443, 65539, 4, 720979, 65539, 5, 655444, 3, 4, 720980, 3, 5, 655445, 65539, 4, 720981, 65539, 5, 655446, 3, 4, 720982, 3, 5, 655447, 65539, 4, 720983, 65539, 5, 524380, 3, 4, 589916, 3, 5, 524381, 65539, 4, 589917, 65539, 5, 524382, 3, 4, 589918, 3, 5, 524383, 65539, 4, 589919, 65539, 5, 524384, 3, 4, 589920, 3, 5, 524385, 65539, 4, 589921, 65539, 5, 524386, 3, 4, 589922, 3, 5, 524387, 65539, 4, 589923, 65539, 5, 524388, 3, 4, 589924, 3, 5, 524389, 65539, 4, 589925, 65539, 5, 524390, 3, 4, 589926, 3, 5, 524391, 65539, 4, 589927, 65539, 5, 524392, 3, 4, 589928, 3, 5, 524393, 65539, 4, 589929, 65539, 5, 196707, 3, 4, 262243, 3, 5, 196708, 65539, 4, 262244, 65539, 5, 196705, 3, 4, 262241, 3, 5, 196706, 65539, 4, 262242, 65539, 5, 196709, 3, 4, 262245, 3, 5, 196710, 65539, 4, 262246, 65539, 5, 196711, 3, 4, 262247, 3, 5, 196712, 65539, 4, 262248, 65539, 5, 196713, 3, 4, 262249, 3, 5, 196714, 65539, 4, 262250, 65539, 5, 524394, 3, 4, 589930, 3, 5, 524395, 65539, 4, 589931, 65539, 5, 524396, 3, 4, 589932, 3, 5, 524397, 65539, 4, 589933, 65539, 5, 524399, 65539, 4, 589935, 65539, 5, 524398, 3, 4, 589934, 3, 5, 524400, 3, 4, 589936, 3, 5, 524401, 65539, 4, 589937, 65539, 5, 196715, 3, 4, 262251, 3, 5, 196716, 65539, 4, 262252, 65539, 5, 196717, 3, 4, 262253, 3, 5, 196718, 65539, 4, 262254, 65539, 5, 196719, 3, 4, 262255, 3, 5, 196720, 65539, 4, 262256, 65539, 5, 393216, 3, 4, 458752, 3, 5, 393217, 65539, 4, 458753, 65539, 5, 393218, 3, 4, 458754, 3, 5, 393219, 65539, 4, 458755, 65539, 5, 393220, 3, 4, 458756, 3, 5, 393221, 65539, 4, 458757, 65539, 5, 393222, 3, 4, 458758, 3, 5, 393223, 65539, 4, 458759, 65539, 5, 393224, 3, 4, 458760, 3, 5, 393225, 65539, 4, 458761, 65539, 5, 393226, 3, 4, 458762, 3, 5, 393227, 65539, 4, 458763, 65539, 5, 458790, 3, 4, 524326, 3, 5, 458791, 65539, 4, 524327, 65539, 5, 458792, 3, 4, 524328, 3, 5, 458793, 65539, 4, 524329, 65539, 5, 458794, 3, 4, 524330, 3, 5, 458795, 65539, 4, 524331, 65539, 5, 458796, 3, 4, 524332, 3, 5, 458797, 65539, 4, 524333, 65539, 5)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(16, 164)
@@ -548,117 +543,54 @@ zoom = Vector2(2, 2)
 limit_left = 0
 limit_top = 0
 
-[node name="enemy_ranged" parent="." instance=ExtResource("6_7hopw")]
-position = Vector2(305, 166)
+[node name="Ammo_counter" parent="." instance=ExtResource("4_sxgl6")]
 
-[node name="enemy_ranged4" parent="." instance=ExtResource("6_7hopw")]
-position = Vector2(1732, 36)
+[node name="HealthBar" parent="." instance=ExtResource("5_fxiqv")]
 
-[node name="enemy_ranged5" parent="." instance=ExtResource("6_7hopw")]
-position = Vector2(1696, 37)
-
-[node name="enemy_ranged2" parent="." instance=ExtResource("6_7hopw")]
-position = Vector2(478, 166)
-
-[node name="enemy_ranged3" parent="." instance=ExtResource("6_7hopw")]
-position = Vector2(607, 167)
-
-[node name="Enemy_melee" parent="." instance=ExtResource("7_hrcdm")]
-position = Vector2(821, 171)
-
-[node name="Enemy_melee2" parent="." instance=ExtResource("7_hrcdm")]
-position = Vector2(1327, 156)
-
-[node name="Flip" parent="." instance=ExtResource("8_kelf3")]
-position = Vector2(759, 176)
-
-[node name="Flip2" parent="." instance=ExtResource("8_kelf3")]
-position = Vector2(903, 178)
-
-[node name="Flip3" parent="." instance=ExtResource("8_kelf3")]
-position = Vector2(1238, 160)
-
-[node name="Flip4" parent="." instance=ExtResource("8_kelf3")]
-position = Vector2(1415, 159)
-
-[node name="Health_pickup" parent="." instance=ExtResource("9_e68xo")]
-position = Vector2(508, 177)
-
-[node name="Health_pickup2" parent="." instance=ExtResource("9_e68xo")]
-position = Vector2(869, 178)
-
-[node name="Edge of map" parent="." instance=ExtResource("10_yfypf")]
-position = Vector2(75, 283)
-
-[node name="Spikes" parent="." instance=ExtResource("11_8qrjm")]
-position = Vector2(358.357, 78.3851)
-
-[node name="CollisionShape2D" parent="Spikes" index="0"]
-position = Vector2(-7.99337, 90.8733)
-
-[node name="Sprite2D" parent="Spikes" index="1"]
-position = Vector2(-8.09845, 93.8734)
-rotation = 3.14159
-scale = Vector2(1.40731, 1.40731)
-
-[node name="Spikes2" parent="." instance=ExtResource("11_8qrjm")]
-position = Vector2(1305, 29)
-
-[node name="CollisionShape2D" parent="Spikes2" index="0"]
-position = Vector2(-25.6363, 128.258)
-
-[node name="Sprite2D" parent="Spikes2" index="1"]
-position = Vector2(-25.7415, 131.259)
-rotation = 3.14159
-scale = Vector2(1.40731, 1.40731)
-
-[node name="Spikes3" parent="." instance=ExtResource("11_8qrjm")]
-position = Vector2(1622, 35)
-
-[node name="CollisionShape2D" parent="Spikes3" index="0"]
-position = Vector2(13.3639, 87.2584)
-
-[node name="Sprite2D" parent="Spikes3" index="1"]
-position = Vector2(13.2585, 90.2585)
-rotation = 3.14159
-scale = Vector2(1.40731, 1.40731)
-
-[node name="Spikes4" parent="." instance=ExtResource("11_8qrjm")]
-position = Vector2(1687, 33)
-
-[node name="CollisionShape2D" parent="Spikes4" index="0"]
-position = Vector2(7.3639, 90.2584)
-
-[node name="Sprite2D" parent="Spikes4" index="1"]
-position = Vector2(7.25854, 93.2585)
-rotation = 3.14159
-scale = Vector2(1.40731, 1.40731)
-
-[node name="Moving Platform" parent="." instance=ExtResource("12_ry8v1")]
-position = Vector2(978, 170)
-
-[node name="levle_swap2" parent="." instance=ExtResource("14_6royv")]
-position = Vector2(1788, -60)
-
-[node name="Door and Button" parent="." instance=ExtResource("13_xse5d")]
-position = Vector2(1559, 45)
+[node name="Door and Button" parent="." instance=ExtResource("6_08krw")]
+position = Vector2(132, 172)
 
 [node name="Button" parent="Door and Button" index="1"]
-position = Vector2(-55, 86)
-
-[node name="CollisionShape2D" parent="Door and Button/Button/Area2D" index="0"]
-position = Vector2(-0.181763, -1.25)
-scale = Vector2(1, 1)
+position = Vector2(-55, 8)
 
 [node name="Door" parent="Door and Button" index="2"]
-position = Vector2(39, 62)
-scale = Vector2(1, 1.16667)
+position = Vector2(48, -16.5)
+scale = Vector2(1, 1.14583)
 
-[node name="AmmoPickup" parent="." instance=ExtResource("16_4vkb7")]
-position = Vector2(638, 174)
+[node name="Spikes" parent="." instance=ExtResource("7_anht1")]
+position = Vector2(49, 169)
 
+[node name="CollisionShape2D" parent="Spikes" index="0"]
+position = Vector2(0, 0.5)
+
+[node name="Sprite2D" parent="Spikes" index="1"]
+position = Vector2(0, 7)
+rotation = 3.14159
+
+[node name="Spikes2" parent="." instance=ExtResource("7_anht1")]
+position = Vector2(101, 170)
+
+[node name="CollisionShape2D" parent="Spikes2" index="0"]
+position = Vector2(0, 0.5)
+
+[node name="Sprite2D" parent="Spikes2" index="1"]
+position = Vector2(0, 7)
+rotation = 3.14159
+
+[node name="Spikes3" parent="." instance=ExtResource("7_anht1")]
+position = Vector2(101, 170)
+
+[node name="CollisionShape2D" parent="Spikes3" index="0"]
+position = Vector2(40, 0.5)
+
+[node name="Sprite2D" parent="Spikes3" index="1"]
+position = Vector2(40, 7)
+rotation = 3.14159
+
+[node name="Enemy_melee" parent="." instance=ExtResource("10_3855j")]
+position = Vector2(352, 170)
+
+[editable path="Door and Button"]
 [editable path="Spikes"]
 [editable path="Spikes2"]
 [editable path="Spikes3"]
-[editable path="Spikes4"]
-[editable path="Door and Button"]

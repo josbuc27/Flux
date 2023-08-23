@@ -1,7 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://cja27dv4jtkum"]
+[gd_scene load_steps=19 format=3 uid="uid://cja27dv4jtkum"]
 
+[ext_resource type="Script" path="res://Scripts/set_scene.gd" id="1_6nk4x"]
 [ext_resource type="PackedScene" uid="uid://btm8civbbxvl3" path="res://Scenes/edge_of_map.tscn" id="1_p3gan"]
 [ext_resource type="Texture2D" uid="uid://ckfsksaa31rdo" path="res://Assets/CraterCaverns-tiles/CraterCaverns-tiles/tiles.png" id="2_oxn7o"]
+[ext_resource type="PackedScene" uid="uid://bhleuo6igwkrj" path="res://Scenes/parallax_background.tscn" id="2_publr"]
 [ext_resource type="PackedScene" uid="uid://cppd8t8ak22rl" path="res://Scenes/health_bar.tscn" id="2_wgyju"]
 [ext_resource type="PackedScene" uid="uid://dnk77k6huc1s8" path="res://Scenes/flip.tscn" id="3_aatfs"]
 [ext_resource type="PackedScene" uid="uid://b1fi55h3en648" path="res://Scenes/ammo_counter.tscn" id="3_etdi2"]
@@ -520,69 +522,72 @@ physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_sabuh")
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_6nk4x")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_publr")]
+scale = Vector2(2.5, 2.5)
+transform = Transform2D(2.5, 0, 0, 2.5, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("6_t75v4")]
-position = Vector2(98, 80)
+position = Vector2(98, 177)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 
 [node name="HealthBar" parent="Player" instance=ExtResource("2_wgyju")]
-offset_left = -304.0
-offset_top = -197.0
-offset_right = -264.0
-offset_bottom = -157.0
 
 [node name="Ammo_counter" parent="Player" instance=ExtResource("3_etdi2")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(98, 80)
+position = Vector2(98, 177)
 zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hv7jk")
 format = 2
 layer_0/name = "Ground"
-layer_0/tile_data = PackedInt32Array(393218, 3, 4, 458754, 3, 5, 393219, 65539, 4, 458755, 65539, 5, 393220, 3, 4, 458756, 3, 5, 393221, 65539, 4, 458757, 65539, 5, 393222, 3, 4, 458758, 3, 5, 393223, 65539, 4, 458759, 65539, 5, 393224, 3, 4, 458760, 3, 5, 393225, 65539, 4, 458761, 65539, 5, 393226, 3, 4, 458762, 3, 5, 393227, 65539, 4, 458763, 65539, 5, 327695, 3, 4, 393231, 3, 5, 327696, 65539, 4, 393232, 65539, 5, 327697, 3, 4, 393233, 3, 5, 327698, 65539, 4, 393234, 65539, 5, 327699, 3, 4, 393235, 3, 5, 327700, 65539, 4, 393236, 65539, 5, 327701, 3, 4, 393237, 3, 5, 327702, 65539, 4, 393238, 65539, 5, 327703, 3, 4, 393239, 3, 5, 327704, 65539, 4, 393240, 65539, 5, 327714, 3, 4, 393250, 3, 5, 327715, 65539, 4, 393251, 65539, 5, 327712, 3, 4, 393248, 3, 5, 327713, 65539, 4, 393249, 65539, 5, 327716, 3, 4, 393252, 3, 5, 327717, 65539, 4, 393253, 65539, 5, 327710, 3, 4, 393246, 3, 5, 327711, 65539, 4, 393247, 65539, 5, 589883, 3, 4, 655419, 3, 5, 589884, 65539, 4, 655420, 65539, 5, 589885, 3, 4, 655421, 3, 5, 589886, 65539, 4, 655422, 65539, 5, 589887, 3, 4, 655423, 3, 5, 589888, 65539, 4, 655424, 65539, 5, 589889, 3, 4, 655425, 3, 5, 589890, 65539, 4, 655426, 65539, 5, 589891, 3, 4, 655427, 3, 5, 589892, 65539, 4, 655428, 65539, 5, 589893, 3, 4, 655429, 3, 5, 589894, 65539, 4, 655430, 65539, 5, 589895, 3, 4, 655431, 3, 5, 589896, 65539, 4, 655432, 65539, 5, 589897, 3, 4, 655433, 3, 5, 589898, 65539, 4, 655434, 65539, 5, 589899, 3, 4, 655435, 3, 5, 589900, 65539, 4, 655436, 65539, 5, 589907, 3, 4, 655443, 3, 5, 589908, 65539, 4, 655444, 65539, 5, 589909, 3, 4, 655445, 3, 5, 589910, 65539, 4, 655446, 65539, 5, 327718, 3, 4, 393254, 3, 5, 327719, 65539, 4, 393255, 65539, 5, 327705, 3, 4, 393241, 3, 5, 327706, 65539, 4, 393242, 65539, 5, 589915, 3, 4, 655451, 3, 5, 589916, 65539, 4, 655452, 65539, 5, 589917, 3, 4, 655453, 3, 5, 589918, 65539, 4, 655454, 65539, 5, 589919, 3, 4, 655455, 3, 5, 589920, 65539, 4, 655456, 65539, 5, 589921, 3, 4, 655457, 3, 5, 589922, 65539, 4, 655458, 65539, 5, 589923, 3, 4, 655459, 3, 5, 589924, 65539, 4, 655460, 65539, 5, 589925, 3, 4, 655461, 3, 5, 589926, 65539, 4, 655462, 65539, 5, 589927, 3, 4, 655463, 3, 5, 589928, 65539, 4, 655464, 65539, 5, 327781, 3, 4, 393317, 3, 5, 327782, 65539, 4, 393318, 65539, 5, 327783, 3, 4, 393319, 3, 5, 327784, 65539, 4, 393320, 65539, 5, 327785, 3, 4, 393321, 3, 5, 327786, 65539, 4, 393322, 65539, 5, 327787, 3, 4, 393323, 3, 5, 327788, 65539, 4, 393324, 65539, 5, 327789, 3, 4, 393325, 3, 5, 327790, 65539, 4, 393326, 65539, 5, 327791, 3, 4, 393327, 3, 5, 327792, 65539, 4, 393328, 65539, 5, 327793, 3, 4, 393329, 3, 5, 327794, 65539, 4, 393330, 65539, 5, 327795, 3, 4, 393331, 3, 5, 327796, 65539, 4, 393332, 65539, 5, 327797, 3, 4, 393333, 3, 5, 327798, 65539, 4, 393334, 65539, 5, 327799, 3, 4, 393335, 3, 5, 327800, 65539, 4, 393336, 65539, 5, 589929, 3, 4, 655465, 3, 5, 589930, 65539, 4, 655466, 65539, 5, 589931, 3, 4, 655467, 3, 5)
+layer_0/tile_data = PackedInt32Array(786434, 3, 4, 851970, 3, 5, 786435, 65539, 4, 851971, 65539, 5, 786436, 3, 4, 851972, 3, 5, 786437, 65539, 4, 851973, 65539, 5, 786438, 3, 4, 851974, 3, 5, 786439, 65539, 4, 851975, 65539, 5, 786440, 3, 4, 851976, 3, 5, 786441, 65539, 4, 851977, 65539, 5, 786442, 3, 4, 851978, 3, 5, 786443, 65539, 4, 851979, 65539, 5, 786447, 3, 4, 851983, 3, 5, 786448, 65539, 4, 851984, 65539, 5, 786449, 3, 4, 851985, 3, 5, 786450, 65539, 4, 851986, 65539, 5, 786451, 3, 4, 851987, 3, 5, 786452, 65539, 4, 851988, 65539, 5, 786453, 3, 4, 851989, 3, 5, 786454, 65539, 4, 851990, 65539, 5, 786455, 3, 4, 851991, 3, 5, 786456, 65539, 4, 851992, 65539, 5, 786457, 3, 4, 851993, 3, 5, 786458, 65539, 4, 851994, 65539, 5, 786462, 3, 4, 851998, 3, 5, 786463, 65539, 4, 851999, 65539, 5, 786464, 3, 4, 852000, 3, 5, 786465, 65539, 4, 852001, 65539, 5, 786466, 3, 4, 852002, 3, 5, 786467, 65539, 4, 852003, 65539, 5, 786468, 3, 4, 852004, 3, 5, 786469, 65539, 4, 852005, 65539, 5, 786470, 3, 4, 852006, 3, 5, 786471, 65539, 4, 852007, 65539, 5, 917563, 3, 4, 983099, 3, 5, 917564, 65539, 4, 983100, 65539, 5, 917565, 3, 4, 983101, 3, 5, 917566, 65539, 4, 983102, 65539, 5, 917567, 3, 4, 983103, 3, 5, 917568, 65539, 4, 983104, 65539, 5, 917569, 3, 4, 983105, 3, 5, 917570, 65539, 4, 983106, 65539, 5, 917571, 3, 4, 983107, 3, 5, 917572, 65539, 4, 983108, 65539, 5, 917573, 3, 4, 983109, 3, 5, 917574, 65539, 4, 983110, 65539, 5, 917575, 3, 4, 983111, 3, 5, 917576, 65539, 4, 983112, 65539, 5, 917577, 3, 4, 983113, 3, 5, 917578, 65539, 4, 983114, 65539, 5, 917579, 3, 4, 983115, 3, 5, 917580, 65539, 4, 983116, 65539, 5, 917587, 3, 4, 983123, 3, 5, 917588, 65539, 4, 983124, 65539, 5, 917589, 3, 4, 983125, 3, 5, 917590, 65539, 4, 983126, 65539, 5, 917595, 3, 4, 983131, 3, 5, 917596, 65539, 4, 983132, 65539, 5, 917597, 3, 4, 983133, 3, 5, 917598, 65539, 4, 983134, 65539, 5, 917599, 3, 4, 983135, 3, 5, 917600, 65539, 4, 983136, 65539, 5, 917601, 3, 4, 983137, 3, 5, 917602, 65539, 4, 983138, 65539, 5, 917603, 3, 4, 983139, 3, 5, 917604, 65539, 4, 983140, 65539, 5, 917605, 3, 4, 983141, 3, 5, 917606, 65539, 4, 983142, 65539, 5, 917607, 3, 4, 983143, 3, 5, 917608, 65539, 4, 983144, 65539, 5, 917609, 3, 4, 983145, 3, 5, 917610, 65539, 4, 983146, 65539, 5, 917611, 3, 4, 983147, 3, 5, 917612, 65539, 4, 983148, 65539, 5, 589923, 3, 4, 655459, 3, 5, 589924, 65539, 4, 655460, 65539, 5, 589925, 3, 4, 655461, 3, 5, 589926, 65539, 4, 655462, 65539, 5, 589927, 3, 4, 655463, 3, 5, 589928, 65539, 4, 655464, 65539, 5, 589929, 3, 4, 655465, 3, 5, 589930, 65539, 4, 655466, 65539, 5, 589931, 3, 4, 655467, 3, 5, 589932, 65539, 4, 655468, 65539, 5, 589933, 3, 4, 655469, 3, 5, 589934, 65539, 4, 655470, 65539, 5, 589935, 3, 4, 655471, 3, 5, 589936, 65539, 4, 655472, 65539, 5, 589937, 3, 4, 655473, 3, 5, 589938, 65539, 4, 655474, 65539, 5, 589939, 3, 4, 655475, 3, 5, 589940, 65539, 4, 655476, 65539, 5, 589941, 3, 4, 655477, 3, 5, 589942, 65539, 4, 655478, 65539, 5)
 
 [node name="Flip" parent="." instance=ExtResource("3_aatfs")]
-position = Vector2(233, 81)
+position = Vector2(234, 189)
 
 [node name="Flip3" parent="." instance=ExtResource("3_aatfs")]
-position = Vector2(934, 145)
+position = Vector2(935, 222)
 
 [node name="Flip5" parent="." instance=ExtResource("3_aatfs")]
-position = Vector2(1606, 83)
+position = Vector2(1574, 144)
 
 [node name="Flip6" parent="." instance=ExtResource("3_aatfs")]
-position = Vector2(1754, 84)
+position = Vector2(1840, 141)
 
 [node name="Flip4" parent="." instance=ExtResource("3_aatfs")]
-position = Vector2(1242, 145)
+position = Vector2(1242, 225)
 
 [node name="Flip2" parent="." instance=ExtResource("3_aatfs")]
-position = Vector2(438, 80)
+position = Vector2(439, 193)
 
 [node name="Enemy_melee" parent="." instance=ExtResource("4_kvxbd")]
-position = Vector2(304, 74)
+position = Vector2(327, 186)
 
 [node name="Enemy_melee3" parent="." instance=ExtResource("4_kvxbd")]
-position = Vector2(1682, 74)
+position = Vector2(1680, 130)
 
 [node name="Enemy_melee2" parent="." instance=ExtResource("4_kvxbd")]
-position = Vector2(1098, 135)
+position = Vector2(1085, 219)
 
 [node name="enemy_ranged" parent="." instance=ExtResource("5_mnmo4")]
-position = Vector2(595, 71)
+position = Vector2(606, 182)
 
 [node name="enemy_ranged3" parent="." instance=ExtResource("5_mnmo4")]
-position = Vector2(1367, 135)
+position = Vector2(1372, 215)
 
 [node name="Moving Platform" parent="." instance=ExtResource("7_a4duy")]
-position = Vector2(705, 87)
+position = Vector2(692, 176)
 
 [node name="Spikes3" parent="." instance=ExtResource("8_7ninr")]
-position = Vector2(1501, 131)
+position = Vector2(1498, 211)
 
 [node name="CollisionShape2D" parent="Spikes3" index="0"]
 position = Vector2(3.5, 3.5)
@@ -593,7 +598,7 @@ rotation = 3.14159
 scale = Vector2(1.4375, 1.8125)
 
 [node name="Spikes4" parent="." instance=ExtResource("8_7ninr")]
-position = Vector2(1669, 132)
+position = Vector2(1669, 211)
 
 [node name="CollisionShape2D" parent="Spikes4" index="0"]
 position = Vector2(3.5, 3.5)
@@ -604,7 +609,7 @@ rotation = 3.14159
 scale = Vector2(1.4375, 1.8125)
 
 [node name="Spikes2" parent="." instance=ExtResource("8_7ninr")]
-position = Vector2(1163, 145)
+position = Vector2(1164, 222)
 rotation = 3.14159
 
 [node name="CollisionShape2D" parent="Spikes2" index="0"]
@@ -615,7 +620,7 @@ position = Vector2(3.5, 6.5)
 scale = Vector2(1.4375, 1.8125)
 
 [node name="Spikes5" parent="." instance=ExtResource("8_7ninr")]
-position = Vector2(1013, 144)
+position = Vector2(1013, 223)
 rotation = 3.14159
 
 [node name="CollisionShape2D" parent="Spikes5" index="0"]
@@ -626,7 +631,7 @@ position = Vector2(3.5, 6.5)
 scale = Vector2(1.4375, 1.8125)
 
 [node name="Spikes6" parent="." instance=ExtResource("8_7ninr")]
-position = Vector2(399, 80)
+position = Vector2(400, 191)
 rotation = 3.14159
 
 [node name="CollisionShape2D" parent="Spikes6" index="0"]
@@ -637,7 +642,7 @@ position = Vector2(3.5, 6.5)
 scale = Vector2(1.4375, 1.8125)
 
 [node name="Spikes7" parent="." instance=ExtResource("8_7ninr")]
-position = Vector2(274, 80)
+position = Vector2(273, 191)
 rotation = 3.14159
 
 [node name="CollisionShape2D" parent="Spikes7" index="0"]
@@ -648,28 +653,32 @@ position = Vector2(3.5, 6.5)
 scale = Vector2(1.4375, 1.8125)
 
 [node name="Health_pickup" parent="." instance=ExtResource("9_imky4")]
-position = Vector2(1218, 144)
+position = Vector2(1217, 223)
 
 [node name="Health_pickup3" parent="." instance=ExtResource("9_imky4")]
-position = Vector2(1719, 143)
+position = Vector2(1724, 226)
 
 [node name="Health_pickup2" parent="." instance=ExtResource("9_imky4")]
-position = Vector2(553, 80)
+position = Vector2(552, 189)
 
 [node name="AmmoPickup" parent="." instance=ExtResource("10_tahxl")]
-position = Vector2(1193, 141)
+position = Vector2(1192, 220)
 
 [node name="Edge of map" parent="." instance=ExtResource("1_p3gan")]
-position = Vector2(329, 256)
+position = Vector2(335, 335)
 
 [node name="Door and Button" parent="." instance=ExtResource("12_f8ulh")]
 position = Vector2(1561, 142)
 
 [node name="Button" parent="Door and Button" index="1"]
-position = Vector2(-21, 6)
+position = Vector2(-19, 84)
+
+[node name="Door" parent="Door and Button" index="2"]
+position = Vector2(45, 64)
+scale = Vector2(1, 1.16667)
 
 [node name="LevelSwap" parent="." instance=ExtResource("13_7f2wi")]
-position = Vector2(1844, -48)
+position = Vector2(1881, -43)
 
 [editable path="Spikes3"]
 [editable path="Spikes4"]

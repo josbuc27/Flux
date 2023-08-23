@@ -1316,10 +1316,6 @@ position = Vector2(46, 72)
 [node name="Ammo_counter" parent="Player" instance=ExtResource("4_yh0t0")]
 
 [node name="HealthBar" parent="Player" instance=ExtResource("1_hqq7v")]
-offset_left = -299.0
-offset_top = -195.0
-offset_right = -259.0
-offset_bottom = -155.0
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")

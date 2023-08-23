@@ -51,7 +51,6 @@ func update_facing_direction():
 
 
 func take_damage(amount):
-	print("take damage")
 	health_enemy-= amount
 	if health_enemy <= 0:
 		$AnimationPlayer.play("death")
