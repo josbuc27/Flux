@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqs7mhwcpwd34"]
+
+[ext_resource type="Script" path="res://End Game.gd" id="1_87nb1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3652"]
+size = Vector2(62, 340)
+
+[node name="End Game" type="Area2D"]
+script = ExtResource("1_87nb1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(21, 160)
+shape = SubResource("RectangleShape2D_q3652")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

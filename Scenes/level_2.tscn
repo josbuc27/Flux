@@ -585,7 +585,7 @@ position = Vector2(1415, 159)
 position = Vector2(508, 177)
 
 [node name="Health_pickup2" parent="." instance=ExtResource("9_e68xo")]
-position = Vector2(869, 178)
+position = Vector2(878, 177)
 
 [node name="Edge of map" parent="." instance=ExtResource("10_yfypf")]
 position = Vector2(75, 283)
@@ -648,7 +648,6 @@ position = Vector2(-55, 86)
 
 [node name="CollisionShape2D" parent="Door and Button/Button/Area2D" index="0"]
 position = Vector2(-0.181763, -1.25)
-scale = Vector2(1, 1)
 
 [node name="Door" parent="Door and Button" index="2"]
 position = Vector2(39, 62)
@@ -656,6 +655,9 @@ scale = Vector2(1, 1.16667)
 
 [node name="AmmoPickup" parent="." instance=ExtResource("16_4vkb7")]
 position = Vector2(638, 174)
+
+[node name="AmmoPickup2" parent="." instance=ExtResource("16_4vkb7")]
+position = Vector2(857, 174)
 
 [editable path="Spikes"]
 [editable path="Spikes2"]
